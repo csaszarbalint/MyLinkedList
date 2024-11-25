@@ -10,7 +10,9 @@ namespace MyLinkedList
     {
         static void Main(string[] args)
         {
-            var llist = new LinkedList<int>();
+            var linkedList = new LinkedList<int>();
+
+            foreach(int i in Enumerable.Range(1,100)) linkedList.Add(i);
         }
     }
 }
