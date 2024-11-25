@@ -49,15 +49,7 @@ namespace MyLinkedList
         public void Insert(int index, T data)
         {
             if (Head == null)
-            {
-                Head = new Node<T>()
-                {
-                    value = data,
-                    prev = null,
-                    next = null
-                };
-                return;
-            }
+                throw new Exception("No HEAD"); 
 
             if(!Enumerable.Range(0,this.Length(this.Head)+1).Contains(index)) 
                 throw new IndexOutOfRangeException();
@@ -79,15 +71,7 @@ namespace MyLinkedList
         public void Remove(T data)
         {
             if (Head == null)
-            {
-                Head = new Node<T>()
-                {
-                    value = data,
-                    prev = null,
-                    next = null
-                };
-                return;
-            }
+                throw new Exception("No HEAD"); 
 
             var node = this.Head;
             while (node.next != null)
@@ -104,6 +88,9 @@ namespace MyLinkedList
         }
         public T Get(int index)
         {
+            if (Head == null)
+                throw new Exception("No HEAD"); 
+
             if(!Enumerable.Range(0,this.Length(this.Head)).Contains(index)) 
                 throw new IndexOutOfRangeException();
 
