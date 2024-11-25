@@ -12,7 +12,16 @@ namespace MyLinkedList
         {
             var linkedList = new LinkedList<int>();
 
-            foreach(int i in Enumerable.Range(1,100)) linkedList.Add(i);
+            foreach(int i in Enumerable.Range(1,10)) linkedList.Add(i);
+            Console.WriteLine(linkedList);
+
+            linkedList.Insert(5, 99);
+            Console.WriteLine(linkedList);
+
+            linkedList.Remove(2);
+            Console.WriteLine(linkedList);
+
+            Console.WriteLine(linkedList.Get(10));
         }
     }
 }
